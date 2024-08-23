@@ -27,3 +27,15 @@ arrowLeft.addEventListener("click",function (){
 arrowRight.addEventListener("click",()=>{
 	console.log("clic droit")
 })
+
+//Ajout des bullets points
+const dotsParent = document.querySelector(".dots")
+//Création des points 
+for (let i=0; i< slides.length; i++){
+	const dotElement = document.createElement("span")
+	dotElement.classList.add("dot")
+	dotsParent.appendChild(dotElement)
+	if (i=== 0){
+		dotElement.classList.add("dot_selected")
+	}
+}
