@@ -23,6 +23,7 @@ const arrowRight = document.querySelector(".arrow_right")
 // Ajout Eventlistenersur les flèches au clic
 arrowLeft.addEventListener("click",function (){
 	console.log("clic gauche")
+	clickLeftSlide()
 })
 arrowRight.addEventListener("click",()=>{
 	console.log("clic droit")
@@ -52,6 +53,17 @@ function clickRightSlide(){
 	//Déplacemment du point au suivant 
 	dotAll[index].classList.remove("dot_selected")
 	index++
+	dotAll[index].classList.add("dot_selected")
+	//Changement de l'image
+	bannerImg.src=`./assets/images/slideshow/${slides[index].image}`
+	//Changement de text
+	textBanner.innerHTML = `${slides[index].tagLine}`
+}
+
+function clickLeftSlide(){
+	//Déplacemment du point au suivant 
+	dotAll[index].classList.remove("dot_selected")
+	index--
 	dotAll[index].classList.add("dot_selected")
 	//Changement de l'image
 	bannerImg.src=`./assets/images/slideshow/${slides[index].image}`
