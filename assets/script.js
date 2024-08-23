@@ -26,16 +26,35 @@ arrowLeft.addEventListener("click",function (){
 })
 arrowRight.addEventListener("click",()=>{
 	console.log("clic droit")
+	clickRightSlide()
 })
 
 //Ajout des bullets points
 const dotsParent = document.querySelector(".dots")
 //Création des points 
-for (let i=0; i< slides.length; i++){
+for ( i=0; i< slides.length; i++){
 	const dotElement = document.createElement("span")
 	dotElement.classList.add("dot")
 	dotsParent.appendChild(dotElement)
 	if (i=== 0){
 		dotElement.classList.add("dot_selected")
 	}
+}
+
+//Modification de slide
+//Récupération de tous les points 
+const dotAll = document.querySelectorAll(".dot")
+const bannerImg = document.querySelector(".banner-img")
+const textBanner = document.querySelector("#banner p")
+let index=0
+console.log(dotAll)
+function clickRightSlide(){
+	//Déplacemment du point au suivant 
+	dotAll[index].classList.remove("dot_selected")
+	index++
+	dotAll[index].classList.add("dot_selected")
+	//Changement de l'image
+	bannerImg.src=`./assets/images/slideshow/${slides[index].image}`
+	//Changement de text
+	textBanner.innerHTML = `${slides[index].tagLine}`
 }
