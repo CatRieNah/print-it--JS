@@ -16,3 +16,14 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+console.log(slides)
+//Récupération des images flèches
+const arrowLeft = document.querySelector(".arrow_left")
+const arrowRight = document.querySelector(".arrow_right")
+// Ajout Eventlistenersur les flèches au clic
+arrowLeft.addEventListener("click",function (){
+	console.log("clic gauche")
+})
+arrowRight.addEventListener("click",()=>{
+	console.log("clic droit")
+})
